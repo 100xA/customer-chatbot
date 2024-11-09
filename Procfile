@@ -1,1 +1,1 @@
-web: gunicorn 'customer-chatbot':app 
+web: gunicorn wsgi:app 
