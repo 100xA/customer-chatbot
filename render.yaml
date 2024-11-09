@@ -3,7 +3,7 @@ services:
     name: chatbot
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app --log-file=-
+    startCommand: gunicorn wsgi:app --log-file=-
     envVars:
       - key: GEMINI_API_KEY
         sync: false
