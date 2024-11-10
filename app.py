@@ -5,7 +5,7 @@ import os
 import time
 
 app = Flask(__name__)
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+genai.configure(api_key="AIzaSyCsFTOZEzAiOm9Yg1TSjfrb1bc1J9wH-_Q")
 model = genai.GenerativeModel('gemini-pro')
 
 # Store chat history

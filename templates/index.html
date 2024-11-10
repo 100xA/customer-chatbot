@@ -118,8 +118,9 @@
                   hx-swap="beforeend"
                   hx-indicator="#loading-message"
                   class="flex gap-2"
-                  _="on htmx:afterRequest call scrollToBottom()">
+                  onsubmit="clearInput(event)">
                 <input type="text" 
+                       id="messageInput"
                        name="message" 
                        required 
                        placeholder="Type your message here..." 
@@ -159,6 +160,15 @@
         document.body.addEventListener('htmx:afterSettle', function(evt) {
             scrollToBottom();
         });
+
+        // Function to clear input after submission
+        function clearInput(event) {
+            const input = document.getElementById('messageInput');
+            // Use setTimeout to ensure the form submission completes first
+            setTimeout(() => {
+                input.value = '';
+            }, 0);
+        }
     </script>
 </body>
 </html>
