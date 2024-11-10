@@ -1,7 +1,8 @@
 {% for msg in messages %}
-<div class="message {% if msg.sender == 'You' %}ml-auto bg-blue-500 text-white{% else %}bg-gray-100 text-gray-800{% endif %} 
+<div class="message {% if msg.sender == 'You' %}ml-auto bg-blue-500 text-white{% else %}bg-gray-700 text-gray-100{% endif %} 
             max-w-[80%] rounded-lg p-3 mb-3">
     <div class="font-semibold mb-1">{{ msg.sender }}</div>
-    <div>{{ msg.content }}</div>
+    <div class="markdown-content">{{ msg.content | safe }}</div>
 </div>
 {% endfor %}
+
